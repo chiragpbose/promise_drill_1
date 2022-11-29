@@ -4,7 +4,7 @@
 //  messgae `Promise Settled!`.
 
 let pr = new Promise((resolve, reject) => {
-	reject("Rejected Promise!");
+	resolve("resolved Promise!");
 });
 
 let onResolve = (resolveData) => {
@@ -16,4 +16,6 @@ let onReject = (rejectData) => {
 let onFinally = () => {
 	console.log("Promise Settled!");
 };
-pr.then(onResolve).catch(onReject).finally(onFinally);
+pr.then(onResolve)
+.catch(onReject)
+.finally(onFinally);

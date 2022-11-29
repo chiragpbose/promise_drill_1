@@ -1,4 +1,4 @@
-// 8. Use this data endpoint to get the data and console the each house names and handle the error
+// 8. Use this data endpoint to get the data and console the each house` names and handle the error
 // as well.
 //   [ENDPOINT](https://raw.githubusercontent.com/nnnkit/json-data-collections/master/got-houses.json)
 
@@ -15,5 +15,8 @@ p.then((value) => {
 	}
 	return value.json();
 })
-	.then((jsonvalue) => console.log(jsonvalue))
+	.then((jsonvalue) =>
+		console.log(jsonvalue.houses.map((element) => element.name))
+	)
 	.catch((error) => console.log(error));
+//console.log(jsonvalue);
