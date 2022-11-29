@@ -10,13 +10,14 @@ let p = fetch(
 	"https://raw.githubusercontent.com/nnnkit/json-data-collections/master/got-houses.json"
 );
 p.then((value) => {
-	if (!value.ok) {
-		throw Error("could not fetch the data");
-	}
 	return value.json();
 })
-	.then((jsonvalue) =>
-		console.log(jsonvalue.houses.map((element) => element.name))
-	)
-	.catch((error) => console.log(error));
+	.then((jsonvalue) => {
+		//console.log(jsonvalue);
+		console.log(jsonvalue.houses.map((element) => element.name));
+	})
+	.catch((error) => {
+		console.log("error terror");
+	});
+
 //console.log(jsonvalue);
